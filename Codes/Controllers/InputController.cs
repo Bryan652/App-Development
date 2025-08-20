@@ -8,7 +8,7 @@ namespace Codes.Controllers
     public class InputController : ControllerBase
     {
         // Sample data
-        public static List<Input> books = new List<Input>
+        public static List<Input> input = new List<Input>
         {
             new Input { Id = 1, Name = "Do Nothing"},
             new Input { Id = 2, Name = "Grammar 101"},
@@ -16,12 +16,12 @@ namespace Codes.Controllers
             new Input { Id = 3, Name = "Read people like a book"},
             new Input { Id = 3, Name = "Serpent Dove"}
         };
-
+          
         // GET: api/books
         [HttpGet]
         public ActionResult<IEnumerable<Input>> GetInput()
         {
-            return Ok(books);
+            return Ok(input);
         }
     }
 

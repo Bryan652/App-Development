@@ -21,6 +21,18 @@ namespace Codes.Controllers
         {
             return Ok(books);
         }
+
+        [HttpGet("{id}")]
+        public ActionResult<Books> GetById(int id)
+        {
+            var book = books.FirstOrDefault(s => s.Id == id);
+            if (book == null)
+                return NotFound(); // 404 Not Found
+
+            return Ok(book); // 200 OK
+        }
+
+
     }
     public class Books
     {
