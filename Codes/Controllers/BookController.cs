@@ -32,7 +32,45 @@ namespace Codes.Controllers
             return Ok(book); // 200 OK
         }
 
+        // POST: api/students
+        [HttpPost]
+        public ActionResult<Books> Create(Books book)
+        {
+            if (book == null)
+                return BadRequest(); // 400 Bad Request
 
+            book.Id = books.Count > 0 ? books.Max(s => s.Id) + 1 : 1;
+            books.Add(book);
+
+            // 201 Created with Location header
+            return CreatedAtAction(nameof(GetById), new { id = book.Id }, book);
+        }
+
+        [HttpPut("{id}")]
+        public IActionResult Update(int id, Books updatedBooks)
+        {
+            if (updatedBooks == null || updatedBooks.Id != id)
+                return BadRequest(); // 400 Bad Request
+
+            var existingBooks = books.FirstOrDefault(s => s.Id == id);
+            if (existingBooks == null)
+                return NotFound(); // 404 Not Found
+
+            existingBooks.Name = updatedBooks.Name;
+
+            return NoContent(); // 204 No Content
+        }
+
+        [HttpDelete("{id}")]
+        public IActionResult Delete(int id)
+        {
+            var student = books.FirstOrDefault(s => s.Id == id);
+            if (student == null)
+                return NotFound(); // 404 Not Found
+
+            books.Remove(student);
+            return NoContent(); // 204 No Content
+        }
     }
     public class Books
     {
@@ -40,3 +78,6 @@ namespace Codes.Controllers
         public string Name { get; set; }
     }
 }
+
+
+
