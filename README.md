@@ -95,3 +95,63 @@ namespace WebApplication1.Controllers
 
 --- 
 
+## Week 4 - 5
+notes 
+```bash
+What is Model?
+* Represents data structure
+* Maps to database entities or request objects
+Example: Student, Product, Registration Form
+
+What is Data Binding
+* JSON -> Model Mapping
+* Automatic conversion by ASP.NET Core
+Example: { "username" : "Bryan" } -> RegistrationModel.username
+
+Data Annotations
+* [Required] -> Field must not be null/empty
+* [StringLength(50)] -> Limit String size
+* [Range(1, 100)] -> Restrict numeric range
+* [EmailAddress] -> must be valid email format 
+* [RegularExpression()] -> pattern matching
+
+What is Model Validation
+* Ensure Data Correctness
+* Prevents invalid input from breaking app
+* Uses Data Annotations (Required, EmailAddress, MinLength, Compare, etc)
+```
+
+codes 
+``` c#
+
+```
+
+### Machine Problem 
+* Create a registration API with validation
+* Fields: FirstName, LastName, Email, Password, ConfirmPassword, Age
+* Apply rules: required fields, email format, password, confirmation, minimum age 18
+
+--- 
+
+## Connecting ASP.NET to database 
+* EF Core = ORM (Object Relational Mapper) 
+* Maps Database tables to C# classes
+* Eliminates most SQL writing
+* Database is Designed first
+* EF Core generates models and DbContext
+* Useful if database already exists
+* In Database-First, we scaffold models fron an existing database.
+* This command generates models and DbContext
+* Scaffold-DbContext
+``` bash
+"Server=;Database=SchoolDB;Trusted_Connection=True;" Microsoft.EntityFrameworkCore.SqlServer - OutputDir Models
+```
+* central class for EF Core
+* Represents database connection
+* Exposes DbSet<T> for tables
+
+### Machine Problem 
+* Using EF Core, Connect your API to a Database (MS SQL SERVER)
+* Build a simple CRUD API for database table of your choice
+* User DB First Approach 
+
