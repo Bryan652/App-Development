@@ -5,10 +5,9 @@
 ## Week 1 - 3
 
 ## notes 
-``` bash
-Documentation for the ASP.NET
-https://learn.microsoft.com/en-us/aspnet/core/?view=aspnetcore-9.0
-```
+
+### Documentation of ASP.NET 
+[Here ASP.NET](https://learn.microsoft.com/en-us/aspnet/core/?view=aspnetcore-9.0)
 
 ### API
 * An API (Application Programming Interface) is a set of rules that allows software components to communicate
