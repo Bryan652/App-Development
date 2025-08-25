@@ -3,12 +3,110 @@
 --- 
 
 ## Week 1 - 3
-notes 
+
+## notes 
 ``` bash
-Nothing.....
+Documentation for the ASP.NET
+https://learn.microsoft.com/en-us/aspnet/core/?view=aspnetcore-9.0
 ```
 
-codes 
+### API
+* An API (Application Programming Interface) is a set of rules that allows software components to communicate
+
+### Importance of API: 
+* Connects different applications
+* Enables automation
+* Power Integrations (e.g., Google Maps in apps)
+Examples Facebook Graph API, Stripe Payment API, Weather Data APIs
+
+### Rest API
+* REST = Representational State Transfer
+* Stateless Communication
+* Uses standard HTTP methods (GET, POST, PUT, DELETE)
+* Resource-based URLs
+* Data Format: Usually JSON (sometimes XML)
+
+### Common HTTP Methods 
+* GET - Retrieve Data
+* POST - Create Data
+* PUT - Update Data
+* DELETE - Remove Data 
+
+### HTTP Status codes 
+* 200 OK - Success
+* 201 Created - Resource created
+* 400 Bad Request - invalid Request
+* 404 Not Found - Resource missing
+* 500 Internal Server Error - Server Issue
+* A cross-platform, open-source framework for building modern applications. It runs on windows, macOS, and Linus. Uses c# for primary language
+
+<table>
+  <tr>
+    <td rowspan="2">Controllers</td>
+    <td>Classes that handle incoming HTTP requests and send responses back to the client</td>
+  </tr>
+  <tr>
+    <td>Defines API endpoints using HTTP verbs like GET, POST, PUT, DELETE</td>
+  </tr>
+  <tr>
+    <td rowspan="2">Routing </td>
+    <td>Matching URL paths to controller actions</td>
+  </tr>
+  <tr>
+    <td>Default route format: /api/[controller]/[action]</td>
+  </tr>
+    <tr>
+    <td rowspan="3">Action Methods </td>
+    <td>Action = method in controller that handles a request</td>
+  </tr>
+  <tr>
+    <td>Decorated with attributes: [HttpGet] [HttpPost] [HttpPut] [HttpDelete]</td>
+  </tr>
+    <tr>
+    <td>Can take parameters from: 
+        * URL Path
+        * Query string
+        * Request Body
+    </td>
+  </tr>
+    <tr>
+    <td rowspan="2">Models</td>
+    <td>Classes that represent the structure of your data</td>
+  </tr>
+  <tr>
+    <td>Defines how your API stores and transfers data</td>
+  </tr>
+    <tr>
+    <td rowspan="2">Program.cs</td>
+    <td>The main entry point of the ESP.NET Core application</td></td>
+  </tr>
+  <tr>
+    <td>Builds and runs the web application, sets up services and middleware</td>
+  </tr>
+    <tr>
+    <td rowspan="2">appSettings.json</td>
+    <td>Configuration file for the application</td>
+  </tr>
+  <tr>
+    <td>Stores settings like database connection, API keys, or logging settings in JSON format.</td>
+  </tr>
+    <tr>
+    <td rowspan="2">appsettings.Development.json</td>
+    <td>Environment-specific configuration file for development mode.</td>
+  </tr>
+  <tr>
+    <td>Overrides settings in appsetting.json when running in development</td>
+  </tr>
+    <tr>
+    <td rowspan="2">Properties/launchSettings.json</td>
+    <td>File containing profiles for how the app run locally.</td>
+  </tr>
+  <tr>
+    <td>Specifies ports, URLs, and environment variables for debugging </td>
+  </tr>
+</table>
+
+## codes 
 ``` c#
 using Microsoft.AspNetCore.Mvc;
 
@@ -96,9 +194,9 @@ namespace WebApplication1.Controllers
 --- 
 
 ## Week 4 - 5
-notes 
-```bash
-What is Model?
+
+## notes
+### What is Model?
 * Represents data structure
 * Maps to database entities or request objects
 Example: Student, Product, Registration Form
@@ -119,9 +217,8 @@ What is Model Validation
 * Ensure Data Correctness
 * Prevents invalid input from breaking app
 * Uses Data Annotations (Required, EmailAddress, MinLength, Compare, etc)
-```
 
-codes 
+## codes 
 ``` c#
 
 ```
